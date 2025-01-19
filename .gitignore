@@ -1,0 +1,18 @@
+# Dependencias
+node_modules/
+
+# Archivos sensibles
+*.env
+
+# Archivos de pruebas y herramientas
+*.log
+*.rest
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Directorios de producción o build
+dist/
+build/
+
