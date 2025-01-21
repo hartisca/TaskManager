@@ -1,0 +1,28 @@
+.layout {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;  
+  grid-template-areas:
+    "head head head"
+    "empty main side"
+    "foot foot foot";
+  grid-template-rows: 70px 1fr 40px;
+  grid-template-columns: 200px 1fr 200px;
+
+  .headerContainer {
+    grid-area: head;
+    background-color: black;
+  }
+  .mainContainer{
+    grid-area: main;
+    background-color: red;
+  }
+  .sideContentContainer{
+    grid-area: side;
+  }
+  .footerContainer{
+    grid-area: foot;
+    background-color: lightblue;
+  }
+}

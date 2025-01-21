@@ -13,6 +13,6 @@ node_modules/
 Thumbs.db
 
 # Directorios de producción o build
-dist/
-build/
+*dist/
+*build/
 
