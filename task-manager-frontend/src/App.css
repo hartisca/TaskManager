@@ -2,7 +2,10 @@
   display: grid;
   width: 100%;
   min-height: 100vh;
-  text-align: center;  
+  text-align: center;
+  
+  color: white;
+
   grid-template-areas:
     "head head head"
     "empty main side"
@@ -11,18 +14,46 @@
   grid-template-columns: 200px 1fr 200px;
 
   .headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: head;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.329);
   }
   .mainContainer{
-    grid-area: main;
-    background-color: red;
+    grid-area: main;    
   }
   .sideContentContainer{
     grid-area: side;
   }
   .footerContainer{
     grid-area: foot;
-    background-color: lightblue;
   }
+}
+
+.headerNav {  
+    
+  ul{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    a{
+      color: white;
+      text-decoration: none;
+      font-weight: normal;
+      font-size: large;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/*CARD COMPONENT*/
+
+.card {
+
+  background-color: rgba(0, 0, 0, 0.329);
+  border: 1px solid var(--borders);
 }
