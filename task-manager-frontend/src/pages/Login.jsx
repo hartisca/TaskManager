@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
+import { setSession } from '../features/userSlice'
 import Card from "../components/Card";
 import Button from "../components/ui/Button";
 import useAuth from "../hooks/useAuth"
+import { useDispatch } from 'react-redux'
 
 function Login() {
   const [registered, setRegistered] = useState(false);
@@ -9,7 +12,10 @@ function Login() {
   const [loginPassword, setLoginPassword] = useState("");
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  const { login, register, error } = useAuth();
+  const { login, register, error } = useAuth();  
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -27,6 +33,15 @@ function Login() {
     const data = await login(loginEmail, loginPassword);
     if (data) {
       console.log("Login is correct", data);
+      const { session, user } = data.data;
+      if (session && user) {
+        localStorage.setItem('supabaseSession', JSON.stringify({ session, user }));
+
+        dispatch(setSession({ session, user }));
+        navigate("/");
+      } else {
+        console.error("Session or user data missing:", data);
+      }
     } else {
       console.error("Login failed:", error);
     }
@@ -43,7 +58,7 @@ function Login() {
     const data = await register(registerEmail, registerPassword);
     if (data) {
       console.log("Registration successful:", data);
-      setRegistered(false); // Volver a la vista de login
+      setRegistered(false);
     } else {
       console.error("Registration failed:", error);
     }
