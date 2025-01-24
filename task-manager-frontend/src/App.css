@@ -19,6 +19,7 @@
     align-items: center;
     grid-area: head;
     background-color: rgba(0, 0, 0, 0.329);
+    padding: 0 3.5rem;
   }
   .mainContainer{
     grid-area: main;
@@ -34,22 +35,19 @@
   }
 }
 
-.headerNav {  
-    
-  ul{
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+.headerNav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
 
-    a{
-      color: white;
-      text-decoration: none;
-      font-weight: normal;
-      font-size: large;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+  .menu{
+    display: flex;    
+    align-items: center;
+    gap: 3rem;    
+    padding: 0;
+    list-style: none;
+    padding: 0 0 0 2.8rem;
   }
 }
 

@@ -24,6 +24,7 @@ export const userSlice = createSlice({
       state.isLoggedIn = false; // Marca al usuario como no logueado
       state.error = null; // Resetea errores
     },
+    
     setLoading(state, action) {
       state.loading = action.payload;
     },

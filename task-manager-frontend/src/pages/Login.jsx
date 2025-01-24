@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
-import { setSession } from '../features/userSlice'
+import { setSession } from '../state/userSlice'
 import Card from "../components/Card";
 import Button from "../components/ui/Button";
 import useAuth from "../hooks/useAuth"
