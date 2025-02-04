@@ -19,7 +19,8 @@
     align-items: center;
     grid-area: head;
     background-color: rgba(0, 0, 0, 0.329);
-    padding: 0 3.5rem;
+    padding: 0 6rem;
+    width: 100%;
   }
   .mainContainer{
     grid-area: main;
@@ -40,13 +41,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;  
+  width: 100%;
 
   .menu{
     display: flex;
-    align-items: center;
+    align-items: center;    
     gap: 3rem;    
-    list-style: none;
-    padding: 0 0 0 2.8rem;
+    list-style: none;    
+    padding-inline-start: 0px;
+    margin-right: 8rem;
   }
 }
 
@@ -67,7 +70,6 @@
 }
 
 .card-content{  
-  
   form{
     display: flex;
     align-items: center;
@@ -87,8 +89,7 @@
     }
     button {
       margin-top: 5px;
-    }
-   
+    }   
   }
 }
 
@@ -106,7 +107,13 @@
   }
 
   .headerContainer {
-    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: head;
+    background-color: rgba(0, 0, 0, 0.329);
+    width: 100%;
+    padding: 0 0 0 0 !important;
   }
 
   .mainContainer{
